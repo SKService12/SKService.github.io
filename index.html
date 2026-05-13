@@ -1,71 +1,66 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gartenservice Ferhat</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK Service | Hausentrümpelung & Gartenservice</title>
   <style>
-    body{
-      font-family: Arial;
-      margin:0;
-      background:#f4f4f4;
-      text-align:center;
-    }
-
-    header{
-      background:green;
-      color:white;
-      padding:40px;
-    }
-
-    section{
-      padding:40px;
-    }
-
-    .box{
-      background:white;
-      margin:20px auto;
-      padding:20px;
-      width:80%;
-      border-radius:10px;
-    }
-
-    footer{
-      background:#222;
-      color:white;
-      padding:20px;
-    }
+    body { margin:0; font-family: Arial, sans-serif; color:#222; }
+    header { background:#1f4d2b; color:white; padding:70px 20px; text-align:center; }
+    header h1 { font-size:42px; margin:0; }
+    header p { font-size:20px; margin:15px 0 30px; }
+    .btn { background:#f2c94c; color:#000; padding:15px 25px; text-decoration:none; border-radius:8px; font-weight:bold; display:inline-block; }
+    section { padding:50px 20px; max-width:1000px; margin:auto; }
+    h2 { color:#1f4d2b; font-size:32px; text-align:center; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:#f5f5f5; padding:25px; border-radius:12px; text-align:center; box-shadow:0 2px 8px #ddd; }
+    .contact { background:#1f4d2b; color:white; text-align:center; padding:50px 20px; }
+    .contact a { color:white; font-weight:bold; }
+    footer { background:#111; color:white; text-align:center; padding:20px; }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Gartenservice Ferhat</h1>
-  <p>Gartenpflege & Dienstleistungen rund ums Haus</p>
+  <h1>SK Service</h1>
+  <p>Hausentrümpelung & Gartenservice</p>
+  <a class="btn" href="tel:015906831647">Jetzt kostenlos anfragen</a>
 </header>
 
 <section>
-
-  <div class="box">
-    <h2>Unsere Leistungen</h2>
-    <p>✔ Rasen mähen</p>
-    <p>✔ Heckenschnitt</p>
-    <p>✔ Gartenpflege</p>
-    <p>✔ Laub entfernen</p>
+  <h2>Unsere Leistungen</h2>
+  <div class="grid">
+    <div class="card">Hausentrümpelung</div>
+    <div class="card">Wohnungsauflösung</div>
+    <div class="card">Keller & Garage räumen</div>
+    <div class="card">Sperrmüll vorbereiten</div>
+    <div class="card">Rasen mähen</div>
+    <div class="card">Heckenschnitt</div>
+    <div class="card">Gartenpflege</div>
+    <div class="card">Laub entfernen</div>
   </div>
-
-  <div class="box">
-    <h2>Kontakt</h2>
-    <p>Telefon: 0123456789</p>
-    <p>E-Mail: info@deinefirma.de</p>
-  </div>
-
 </section>
 
+<section>
+  <h2>Über uns</h2>
+  <p style="font-size:18px; text-align:center; line-height:1.6;">
+    SK Service bietet zuverlässige Hilfe bei Hausentrümpelungen, Wohnungsauflösungen
+    und Gartenarbeiten. Wir arbeiten sauber, schnell und zuverlässig in
+    Ebersbach an der Fils und im Umkreis von ca. 200 km.
+  </p>
+</section>
+
+<div class="contact">
+  <h2 style="color:white;">Kontakt</h2>
+  <p>Telefon / WhatsApp: <a href="tel:015906831647">01590 6831647</a></p>
+  <p>E-Mail: <a href="mailto:Info.skservice@web.de">Info.skservice@web.de</a></p>
+  <p>Standort: Ebersbach an der Fils + 200 km Umkreis</p>
+  <br>
+  <a class="btn" href="mailto:Info.skservice@web.de">Anfrage senden</a>
+</div>
+
 <footer>
-  © 2026 Gartenservice Ferhat
+  © 2026 SK Service – Hausentrümpelung & Gartenservice
 </footer>
 
 </body>
