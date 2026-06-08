@@ -1,116 +1,1083 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>S & K Service | Entrümpelung & Haushaltsauflösung</title>
-  <meta name="description" content="S & K Service aus Ebersbach an der Fils: Entrümpelung, Haushaltsauflösung, Wohnungsauflösung, Entsorgung und Gartenarbeiten. Schnell, sauber und zuverlässig." />
-  <link rel="stylesheet" href="style.css" />
+
+  <meta name="description" content="S & K Service aus Ebersbach an der Fils: Entrümpelung, Haushaltsauflösung, Wohnungsauflösung, Keller, Garage, Sperrmüll, Entsorgung und besenreine Übergabe." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17211b;
+      background: #f7f8f4;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      background: #17351f;
+      color: #eaf7ed;
+      font-size: 14px;
+      padding: 9px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #dce7d5;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #17351f;
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .brand img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    .brand span {
+      color: #3d7a3f;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #26352b;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #3d7a3f;
+    }
+
+    .nav-call {
+      background: #f28c28;
+      color: #ffffff;
+      padding: 13px 19px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(242, 140, 40, 0.28);
+      white-space: nowrap;
+    }
+
+    .nav-call:hover {
+      background: #df7b18;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(115deg, rgba(23, 53, 31, 0.96), rgba(37, 85, 45, 0.90)),
+        radial-gradient(circle at top right, #77a765, transparent 35%);
+      color: white;
+      padding: 95px 0 80px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.035) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.035) 25%, transparent 25%);
+      background-size: 42px 42px;
+      opacity: 0.5;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: #e6f5df;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .label-dot {
+      width: 10px;
+      height: 10px;
+      background: #f28c28;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      max-width: 830px;
+    }
+
+    .hero-text {
+      font-size: 21px;
+      color: #ecf7e8;
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #f28c28;
+      color: #ffffff;
+      box-shadow: 0 14px 28px rgba(242, 140, 40, 0.30);
+    }
+
+    .btn-primary:hover {
+      background: #df7b18;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #17351f;
+    }
+
+    .btn-secondary:hover {
+      background: #edf5e8;
+      transform: translateY(-2px);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: #e9f7e7;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .trust-row span {
+      background: rgba(255, 255, 255, 0.11);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .quote-card {
+      background: #ffffff;
+      color: #17211b;
+      padding: 32px;
+      border-radius: 28px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .quote-card h2 {
+      font-size: 28px;
+      color: #17351f;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .quote-card p {
+      color: #4a584d;
+      margin-bottom: 22px;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .quick-list div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f4f8f1;
+      padding: 13px 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      color: #24382a;
+    }
+
+    .check {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #3d7a3f;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .quote-card .btn {
+      width: 100%;
+    }
+
+    /* SERVICE STRIP */
+    .strip {
+      background: #ffffff;
+      padding: 18px 0;
+      border-bottom: 1px solid #dce7d5;
+    }
+
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .strip-item {
+      background: #f4f8f1;
+      border: 1px solid #dfe9d9;
+      padding: 17px;
+      border-radius: 18px;
+      font-weight: 900;
+      color: #17351f;
+      text-align: center;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .eyebrow {
+      color: #3d7a3f;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .section-head h2,
+    .center-head h2 {
+      color: #17351f;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+      margin-bottom: 14px;
+    }
+
+    .section-head p,
+    .center-head p {
+      color: #536055;
+      font-size: 18px;
+    }
+
+    .center-head {
+      max-width: 780px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    /* LEISTUNGEN */
+    .services {
+      background: #f7f8f4;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 26px;
+      border: 1px solid #dfe9d9;
+      box-shadow: 0 12px 30px rgba(23, 53, 31, 0.06);
+      transition: 0.2s ease;
+      min-height: 235px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 42px rgba(23, 53, 31, 0.12);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: #e7f2df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: #17351f;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #536055;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .image-box {
+      background:
+        linear-gradient(135deg, rgba(23,53,31,0.90), rgba(61,122,63,0.88)),
+        linear-gradient(45deg, #dce7d5, #ffffff);
+      min-height: 430px;
+      border-radius: 32px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-box::before {
+      content: "Entrümpelung";
+      position: absolute;
+      top: 30px;
+      right: -38px;
+      transform: rotate(18deg);
+      font-size: 54px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.08);
+    }
+
+    .image-box strong {
+      font-size: 36px;
+      line-height: 1.05;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .image-box p {
+      color: #eaf7ed;
+      position: relative;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .benefit {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 13px;
+      align-items: start;
+    }
+
+    .benefit h3 {
+      color: #17351f;
+      margin-bottom: 3px;
+    }
+
+    .benefit p {
+      color: #536055;
+    }
+
+    /* PROCESS */
+    .process {
+      background: #edf5e8;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      border: 1px solid #dce7d5;
+      position: relative;
+      min-height: 230px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 44px;
+      height: 44px;
+      background: #17351f;
+      color: white;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .step h3 {
+      color: #17351f;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .step p {
+      color: #536055;
+    }
+
+    /* AREA */
+    .area {
+      background: #ffffff;
+    }
+
+    .area-box {
+      background:
+        linear-gradient(135deg, #17351f, #2e6936);
+      color: white;
+      border-radius: 32px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .area-box::after {
+      content: "";
+      width: 260px;
+      height: 260px;
+      border: 35px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      position: absolute;
+      right: -80px;
+      top: -80px;
+    }
+
+    .area-box h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .area-box p {
+      color: #eaf7ed;
+      font-size: 18px;
+      position: relative;
+    }
+
+    .area-list {
+      position: relative;
+      display: grid;
+      gap: 12px;
+    }
+
+    .area-list div {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 15px;
+      border-radius: 16px;
+      font-weight: 800;
+    }
+
+    /* CTA */
+    .cta {
+      background: #f7f8f4;
+    }
+
+    .cta-card {
+      background: #ffffff;
+      border: 1px solid #dfe9d9;
+      border-radius: 32px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 22px 60px rgba(23, 53, 31, 0.10);
+    }
+
+    .cta-card h2 {
+      color: #17351f;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .cta-card p {
+      color: #536055;
+      font-size: 18px;
+    }
+
+    .contact-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-option {
+      background: #f4f8f1;
+      border: 1px solid #dfe9d9;
+      color: #17351f;
+      padding: 17px 18px;
+      border-radius: 18px;
+      font-weight: 900;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .contact-option:hover {
+      background: #edf5e8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #132418;
+      color: #d7e7d4;
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 200;
+      background: #25d366;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 31px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.28);
+      border: 4px solid white;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+    }
+
+    /* MOBILE */
+    @media (max-width: 920px) {
+      nav {
+        display: none;
+      }
+
+      .nav-call {
+        display: none;
+      }
+
+      .hero-inner,
+      .about-grid,
+      .area-box,
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .strip-grid,
+      .service-grid,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      .quote-card {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-inner {
+        font-size: 13px;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .brand img {
+        height: 42px;
+      }
+
+      .strip-grid,
+      .service-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .area-box,
+      .cta-card {
+        padding: 30px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .whatsapp-float {
+        width: 58px;
+        height: 58px;
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="container nav">
-<div class="logo">
-  <img src="logo.png" alt="S & K Service Logo">
-  <span>S & K Service</span>
-</div>>
-    <nav>
-      <a href="#leistungen">Leistungen</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-    <a class="call-btn" href="tel:+4915906831647">Jetzt anrufen</a>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>S & K Service · Entrümpelung & Haushaltsauflösung</div>
+      <div>
+        Telefon / WhatsApp:
+        <a href="tel:+4915906831647">01590 6831647</a>
+      </div>
+    </div>
   </div>
-</header>
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="badge">Entrümpelung · Haushaltsauflösung · Gartenarbeiten</p>
-      <h1>Entrümpelung & Haushaltsauflösung in Ebersbach an der Fils</h1>
-      <p class="hero-text">
-        S & K Service ist Ihr zuverlässiger Partner für Wohnungsauflösungen,
-        Keller, Garagen, Sperrmüll, Entsorgung und besenreine Übergabe.
-      </p>
-      <div class="hero-buttons">
-        <a class="primary" href="tel:+4915906831647">Kostenlos anrufen</a>
-        <a class="secondary" href="https://wa.me/4915906831647">WhatsApp schreiben</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img src="logo.png" alt="S & K Service Logo" onerror="this.style.display='none'">
+        <div>S & K <span>Service</span></div>
+      </a>
+
+      <nav>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <a class="nav-call" href="tel:+4915906831647">Jetzt anrufen</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <div>
+          <div class="label">
+            <span class="label-dot"></span>
+            Schnell · Sauber · Zuverlässig
+          </div>
+
+          <h1>Entrümpelung vom Keller bis zur kompletten Wohnung</h1>
+
+          <p class="hero-text">
+            S & K Service unterstützt Sie bei Entrümpelungen, Haushaltsauflösungen,
+            Wohnungsauflösungen, Sperrmüll, Entsorgung und besenreiner Übergabe
+            in Ebersbach an der Fils und Umgebung.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+4915906831647">Kostenlos anrufen</a>
+            <a class="btn btn-secondary" href="https://wa.me/4915906831647?text=Hallo%20S%20%26%20K%20Service%2C%20ich%20habe%20eine%20Anfrage%20zur%20Entr%C3%BCmpelung.">WhatsApp schreiben</a>
+          </div>
+
+          <div class="trust-row">
+            <span>✓ Faire Angebote</span>
+            <span>✓ Schnelle Termine</span>
+            <span>✓ Besenrein auf Wunsch</span>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <h2>Entrümpelung anfragen</h2>
+          <p>
+            Schreiben Sie uns kurz, was entrümpelt werden soll. Bilder per WhatsApp helfen bei einer schnellen Einschätzung.
+          </p>
+
+          <div class="quick-list">
+            <div><span class="check">✓</span> Wohnung & Haus</div>
+            <div><span class="check">✓</span> Keller & Dachboden</div>
+            <div><span class="check">✓</span> Garage & Schuppen</div>
+            <div><span class="check">✓</span> Sperrmüll & Entsorgung</div>
+          </div>
+
+          <a class="btn btn-primary" href="https://wa.me/4915906831647?text=Hallo%20S%20%26%20K%20Service%2C%20ich%20m%C3%B6chte%20eine%20Entr%C3%BCmpelung%20anfragen.">Direkt per WhatsApp anfragen</a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="container strip-grid">
+        <div class="strip-item">Entrümpelung</div>
+        <div class="strip-item">Haushaltsauflösung</div>
+        <div class="strip-item">Entsorgung</div>
+        <div class="strip-item">Besenreine Übergabe</div>
       </div>
     </div>
 
-    <div class="hero-card">
-      <h3>Schnell. Sauber. Fair.</h3>
-      <ul>
-        <li>Kostenlose Anfrage</li>
-        <li>Faire Preise</li>
-        <li>Schnelle Termine</li>
-        <li>Besenreine Übergabe</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <section id="leistungen" class="services">
+      <div class="container">
 
-<section id="leistungen" class="section">
-  <div class="container">
-    <h2>Unsere Leistungen</h2>
-    <div class="cards">
-      <div class="card">Haushaltsauflösung</div>
-      <div class="card">Wohnungsauflösung</div>
-      <div class="card">Keller entrümpeln</div>
-      <div class="card">Garage räumen</div>
-      <div class="card">Sperrmüll & Entsorgung</div>
-      <div class="card">Gartenpflege</div>
-      <div class="card">Heckenschnitt</div>
-      <div class="card">Laub entfernen</div>
-    </div>
-  </div>
-</section>
+        <div class="section-head">
+          <div class="eyebrow">Unsere Leistungen</div>
+          <h2>Alles raus, sauber übergeben</h2>
+          <p>
+            Ob einzelne Räume oder komplette Haushalte: Wir kümmern uns um Räumung,
+            Sortierung, Transport und Entsorgung.
+          </p>
+        </div>
 
-<section class="about">
-  <div class="container two-col">
-    <div>
-      <h2>Über S & K Service</h2>
-      <p>
-        Wir unterstützen Privatkunden, Vermieter, Angehörige und Unternehmen
-        bei Entrümpelungen, Haushaltsauflösungen und Gartenarbeiten.
-        Unser Ziel ist eine unkomplizierte, saubere und zuverlässige Abwicklung.
-      </p>
-    </div>
-    <div class="box">
-      <strong>Einsatzgebiet</strong>
-      <p>Ebersbach an der Fils und Umgebung – auf Anfrage bis ca. 200 km.</p>
-    </div>
-  </div>
-</section>
+        <div class="service-grid">
 
-<section id="ablauf" class="section">
-  <div class="container">
-    <h2>So einfach läuft es ab</h2>
-    <div class="steps">
-      <div><span>1</span>Anfrage per Telefon oder WhatsApp</div>
-      <div><span>2</span>Bilder senden oder Besichtigung vereinbaren</div>
-      <div><span>3</span>Faires Angebot erhalten</div>
-      <div><span>4</span>Termin & besenreine Übergabe</div>
+          <div class="service-card">
+            <div class="icon">🏠</div>
+            <h3>Haushaltsauflösung</h3>
+            <p>
+              Komplette Haushalte, Wohnungen oder Häuser werden zuverlässig und ordentlich geräumt.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">📦</div>
+            <h3>Entrümpelung</h3>
+            <p>
+              Wir entrümpeln Keller, Dachboden, Garage, Schuppen, Lagerflächen und einzelne Zimmer.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🚚</div>
+            <h3>Sperrmüll & Entsorgung</h3>
+            <p>
+              Alte Möbel, Hausrat, Gegenstände und Sperrmüll werden fachgerecht abtransportiert.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🧹</div>
+            <h3>Besenreine Übergabe</h3>
+            <p>
+              Nach der Räumung übergeben wir die Räume auf Wunsch besenrein und ordentlich.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🔑</div>
+            <h3>Wohnungsauflösung</h3>
+            <p>
+              Ideal für Vermieter, Angehörige, Nachlassfälle oder Umzüge mit kompletter Räumung.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🌿</div>
+            <h3>Gartenarbeiten</h3>
+            <p>
+              Zusätzlich übernehmen wir Gartenpflege, Heckenschnitt, Laub und kleinere Außenarbeiten.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns" class="about">
+      <div class="container about-grid">
+
+        <div class="image-box">
+          <strong>Mehr Platz. Weniger Stress.</strong>
+          <p>
+            Wir nehmen Ihnen die Arbeit ab und sorgen für eine saubere, schnelle und unkomplizierte Abwicklung.
+          </p>
+        </div>
+
+        <div>
+          <div class="eyebrow">Über S & K Service</div>
+          <div class="section-head">
+            <h2>Zuverlässiger Service aus Ebersbach an der Fils</h2>
+            <p>
+              S & K Service ist Ihr Ansprechpartner für Entrümpelungen,
+              Haushaltsauflösungen, Wohnungsauflösungen, Entsorgung und Gartenarbeiten.
+              Wir arbeiten ordentlich, pünktlich und lösungsorientiert.
+            </p>
+          </div>
+
+          <div class="benefits">
+
+            <div class="benefit">
+              <span class="check">✓</span>
+              <div>
+                <h3>Klare Absprache</h3>
+                <p>Sie sagen uns, was gemacht werden soll. Wir planen den Ablauf verständlich mit Ihnen.</p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <span class="check">✓</span>
+              <div>
+                <h3>Faire Einschätzung</h3>
+                <p>Per Besichtigung oder Bildern können wir den Aufwand besser einschätzen.</p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <span class="check">✓</span>
+              <div>
+                <h3>Saubere Arbeit</h3>
+                <p>Nach der Räumung wird ordentlich verlassen – auf Wunsch besenrein.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="ablauf" class="process">
+      <div class="container">
+
+        <div class="center-head">
+          <div class="eyebrow">Ablauf</div>
+          <h2>In 4 Schritten zur erledigten Entrümpelung</h2>
+          <p>
+            Einfach anfragen, Aufwand klären, Termin vereinbaren und entspannt zurücklehnen.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <h3>Anfrage senden</h3>
+            <p>Rufen Sie an oder schreiben Sie uns bequem per WhatsApp.</p>
+          </div>
+
+          <div class="step">
+            <h3>Aufwand klären</h3>
+            <p>Bilder senden oder Besichtigung vereinbaren, damit alles sauber eingeschätzt wird.</p>
+          </div>
+
+          <div class="step">
+            <h3>Angebot erhalten</h3>
+            <p>Sie erhalten ein faires Angebot passend zum Umfang der Arbeiten.</p>
+          </div>
+
+          <div class="step">
+            <h3>Räumung erledigen</h3>
+            <p>Wir räumen, transportieren ab und übergeben auf Wunsch besenrein.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="area">
+      <div class="container">
+        <div class="area-box">
+
+          <div>
+            <h2>Entrümpelung in Ebersbach an der Fils und Umgebung</h2>
+            <p>
+              Wir sind regional für Sie im Einsatz. Weitere Orte und größere Entfernungen sind nach Absprache möglich.
+            </p>
+          </div>
+
+          <div class="area-list">
+            <div>📍 Ebersbach an der Fils</div>
+            <div>📍 Göppingen & Umgebung</div>
+            <div>📍 Stuttgart Region</div>
+            <div>📍 Einsatzgebiet nach Absprache</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="cta">
+      <div class="container">
+        <div class="cta-card">
+
+          <div>
+            <div class="eyebrow">Kontakt</div>
+            <h2>Jetzt Entrümpelung kostenlos anfragen</h2>
+            <p>
+              Am schnellsten geht es per Telefon oder WhatsApp. Senden Sie gerne Bilder vom Objekt,
+              Keller, Dachboden, der Wohnung oder Garage.
+            </p>
+          </div>
+
+          <div class="contact-options">
+            <a class="contact-option" href="tel:+4915906831647">
+              <span>Telefon</span>
+              <strong>01590 6831647</strong>
+            </a>
+
+            <a class="contact-option" href="https://wa.me/4915906831647?text=Hallo%20S%20%26%20K%20Service%2C%20ich%20m%C3%B6chte%20eine%20Entr%C3%BCmpelung%20anfragen.">
+              <span>WhatsApp</span>
+              <strong>Nachricht senden</strong>
+            </a>
+
+            <a class="contact-option" href="mailto:Info.skservice@web.de">
+              <span>E-Mail</span>
+              <strong>Info.skservice@web.de</strong>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>S & K Service</strong><br>
+        Entrümpelung · Haushaltsauflösung · Entsorgung · Gartenarbeiten
+      </div>
+
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="kontakt" class="contact">
-  <div class="container">
-    <h2>Jetzt kostenlos anfragen</h2>
-    <p>Rufen Sie uns an oder schreiben Sie direkt per WhatsApp.</p>
-    <a class="primary" href="tel:+4915906831647">01590 6831647</a>
-    <a class="secondary" href="mailto:Info.skservice@web.de">Info.skservice@web.de</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    © S & K Service · Ebersbach an der Fils
-  </div>
-</footer>
+  <a class="whatsapp-float" href="https://wa.me/4915906831647?text=Hallo%20S%20%26%20K%20Service%2C%20ich%20habe%20eine%20Anfrage%20zur%20Entr%C3%BCmpelung." aria-label="WhatsApp schreiben">
+    ☎
+  </a>
 
 </body>
 </html>
