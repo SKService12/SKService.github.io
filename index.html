@@ -1,220 +1,112 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>S & K Service | Entrümpelung & Haushaltsauflösung</title>
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #1f2933;
-      background: #f7f8f5;
-    }
-
-    header {
-      background: linear-gradient(135deg, #ffffff 0%, #edf5e6 100%);
-      text-align: center;
-      padding: 35px 20px 70px;
-    }
-
-    .logo {
-      width: 210px;
-      max-width: 80%;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin: 10px 0;
-      color: #1f4d2b;
-    }
-
-    .subtitle {
-      font-size: 21px;
-      max-width: 720px;
-      margin: 15px auto 30px;
-      line-height: 1.5;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 8px;
-      padding: 15px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .primary {
-      background: #2f7d32;
-      color: white;
-    }
-
-    .secondary {
-      background: #f2c94c;
-      color: #111;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 55px 20px;
-    }
-
-    h2 {
-      text-align: center;
-      color: #1f4d2b;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .trust {
-      background: #1f4d2b;
-      color: white;
-      border-radius: 24px;
-      padding: 40px 25px;
-      text-align: center;
-    }
-
-    .trust h2 {
-      color: white;
-    }
-
-    .about {
-      font-size: 18px;
-      line-height: 1.7;
-      text-align: center;
-      max-width: 850px;
-    }
-
-    .contact {
-      background: #1f4d2b;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .contact h2 {
-      color: white;
-    }
-
-    .contact a {
-      color: white;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: white;
-      margin: 0 8px;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 32px; }
-      .subtitle { font-size: 18px; }
-    }
-  </style>
+  <meta name="description" content="S & K Service aus Ebersbach an der Fils: Entrümpelung, Haushaltsauflösung, Wohnungsauflösung, Entsorgung und Gartenarbeiten. Schnell, sauber und zuverlässig." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-  <img src="logo.png" alt="S & K Service Logo" class="logo">
-
-  <h1>Entrümpelung & Haushaltsauflösung</h1>
-
-  <p class="subtitle">
-    S & K Service ist Ihr zuverlässiger Partner für Haushaltsauflösungen,
-    Entrümpelungen, Keller, Garagen und Gartenarbeiten in Ebersbach an der Fils
-    und Umgebung.
-  </p>
-
-  <div class="buttons">
-    <a class="primary" href="tel:015906831647">Jetzt anrufen</a>
-    <a class="secondary" href="https://wa.me/4915906831647">WhatsApp schreiben</a>
+<header class="header">
+  <div class="container nav">
+    <div class="logo">S & K <span>Service</span></div>
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4915906831647">Jetzt anrufen</a>
   </div>
 </header>
 
-<section>
-  <h2>Unsere Leistungen</h2>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="badge">Entrümpelung · Haushaltsauflösung · Gartenarbeiten</p>
+      <h1>Entrümpelung & Haushaltsauflösung in Ebersbach an der Fils</h1>
+      <p class="hero-text">
+        S & K Service ist Ihr zuverlässiger Partner für Wohnungsauflösungen,
+        Keller, Garagen, Sperrmüll, Entsorgung und besenreine Übergabe.
+      </p>
+      <div class="hero-buttons">
+        <a class="primary" href="tel:+4915906831647">Kostenlos anrufen</a>
+        <a class="secondary" href="https://wa.me/4915906831647">WhatsApp schreiben</a>
+      </div>
+    </div>
 
-  <div class="grid">
-    <div class="card">Haushaltsauflösung</div>
-    <div class="card">Wohnungsauflösung</div>
-    <div class="card">Keller entrümpeln</div>
-    <div class="card">Garage räumen</div>
-    <div class="card">Sperrmüll & Entsorgung</div>
-    <div class="card">Besenreine Übergabe</div>
-    <div class="card">Gartenpflege</div>
-    <div class="card">Heckenschnitt & Laub entfernen</div>
+    <div class="hero-card">
+      <h3>Schnell. Sauber. Fair.</h3>
+      <ul>
+        <li>Kostenlose Anfrage</li>
+        <li>Faire Preise</li>
+        <li>Schnelle Termine</li>
+        <li>Besenreine Übergabe</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="trust">
-    <h2>Warum S & K Service?</h2>
-    <p>✓ Kostenlose Anfrage</p>
-    <p>✓ Faire Preise</p>
-    <p>✓ Schnelle Termine</p>
-    <p>✓ Saubere und zuverlässige Arbeit</p>
-    <p>✓ Einsatzgebiet bis ca. 200 km</p>
+<section id="leistungen" class="section">
+  <div class="container">
+    <h2>Unsere Leistungen</h2>
+    <div class="cards">
+      <div class="card">Haushaltsauflösung</div>
+      <div class="card">Wohnungsauflösung</div>
+      <div class="card">Keller entrümpeln</div>
+      <div class="card">Garage räumen</div>
+      <div class="card">Sperrmüll & Entsorgung</div>
+      <div class="card">Gartenpflege</div>
+      <div class="card">Heckenschnitt</div>
+      <div class="card">Laub entfernen</div>
+    </div>
   </div>
 </section>
 
 <section class="about">
-  <h2>Über uns</h2>
-  <p>
-    Wir unterstützen Privatkunden und Unternehmen bei Entrümpelungen,
-    Haushaltsauflösungen und Gartenarbeiten. Unser Ziel ist eine schnelle,
-    saubere und unkomplizierte Abwicklung – von der ersten Anfrage bis zur
-    besenreinen Übergabe.
-  </p>
+  <div class="container two-col">
+    <div>
+      <h2>Über S & K Service</h2>
+      <p>
+        Wir unterstützen Privatkunden, Vermieter, Angehörige und Unternehmen
+        bei Entrümpelungen, Haushaltsauflösungen und Gartenarbeiten.
+        Unser Ziel ist eine unkomplizierte, saubere und zuverlässige Abwicklung.
+      </p>
+    </div>
+    <div class="box">
+      <strong>Einsatzgebiet</strong>
+      <p>Ebersbach an der Fils und Umgebung – auf Anfrage bis ca. 200 km.</p>
+    </div>
+  </div>
 </section>
 
-<div class="contact">
-  <h2>Kostenlose Anfrage stellen</h2>
-  <p>Telefon / WhatsApp: <a href="tel:015906831647">01590 6831647</a></p>
-  <p>E-Mail: <a href="mailto:Info.skservice@web.de">Info.skservice@web.de</a></p>
-  <p>Standort: Ebersbach an der Fils</p>
-
-  <div class="buttons">
-    <a class="secondary" href="tel:015906831647">Anrufen</a>
-    <a class="secondary" href="mailto:Info.skservice@web.de">E-Mail senden</a>
+<section id="ablauf" class="section">
+  <div class="container">
+    <h2>So einfach läuft es ab</h2>
+    <div class="steps">
+      <div><span>1</span>Anfrage per Telefon oder WhatsApp</div>
+      <div><span>2</span>Bilder senden oder Besichtigung vereinbaren</div>
+      <div><span>3</span>Faires Angebot erhalten</div>
+      <div><span>4</span>Termin & besenreine Übergabe</div>
+    </div>
   </div>
-</div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="container">
+    <h2>Jetzt kostenlos anfragen</h2>
+    <p>Rufen Sie uns an oder schreiben Sie direkt per WhatsApp.</p>
+    <a class="primary" href="tel:+4915906831647">01590 6831647</a>
+    <a class="secondary" href="mailto:Info.skservice@web.de">Info.skservice@web.de</a>
+  </div>
+</section>
 
 <footer>
-  © 2026 S & K Service
-  <br><br>
-  <a href="impressum.html">Impressum</a>
-  |
-  <a href="datenschutz.html">Datenschutzerklärung</a>
+  <div class="container">
+    © S & K Service · Ebersbach an der Fils
+  </div>
 </footer>
 
 </body>
