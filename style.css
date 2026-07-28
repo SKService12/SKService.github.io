@@ -285,4 +285,38 @@ footer {
   .hero {
     padding: 60px 0;
   }
+  .orte{
+    background:#f7f9fc;
+    padding:60px 0;
+}
+
+.orte h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#17351f;
+}
+
+.orte-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+}
+
+.orte-grid a{
+    display:block;
+    background:#fff;
+    padding:14px;
+    text-align:center;
+    text-decoration:none;
+    color:#17351f;
+    border:1px solid #d8dde5;
+    border-radius:10px;
+    transition:.2s;
+    font-weight:600;
+}
+
+.orte-grid a:hover{
+    background:#2f8c28;
+    color:#fff;
+}
 }
